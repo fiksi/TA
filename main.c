@@ -28,7 +28,7 @@ int main (void)
 
 	while(1){
 		PORTG ^= (1 << 1);
-		_delay_ms(200);
+		_delay_ms(500);
 	}
 }
 
