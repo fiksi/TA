@@ -36,7 +36,7 @@
 
 #include <avr/io.h>			/* Include device specific declareation file here */
 
-/* pinout
+/* pinout for software based SPI
 
 DO -> MISO / D11 -> PB.0
 DI -> MOSI / D12 -> PB.1
