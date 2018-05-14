@@ -36,13 +36,15 @@
 
 #include <avr/io.h>			/* Include device specific declareation file here */
 
-
 /* pinout
 
-DO -> MISO -> PB.0
-DI -> MOSI -> PB.1
-CK -> SCK  -> PB.2
-CS -> CS   -> PB.3
+DO -> MISO / D11 -> PB.0
+DI -> MOSI / D12 -> PB.1
+CK -> SCK  / D13 -> PB.2
+CS -> CS   / D4  -> PB.3
+
+use ATMega128 powered by 3v3 only
+
 */
 
 #define DO_INIT()					/* Initialize port for MMC DO as input */
