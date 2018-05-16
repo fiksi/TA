@@ -1,13 +1,22 @@
 ### Project name (also used for output file name)
 PROJECT	= tes
 
-### Source files and search directory
-CSRC    = main.c ff.c sdmm.c
-ASRC    =
-VPATH   =
-
 ### Target device
 DEVICE  = atmega128
+
+### Clock Frequency (Hz)
+FPU = 8000000
+
+### C Source files
+CSRC    = main.c ff.c sdmm.c
+
+### Search directories
+VPATH   = sdmmc
+
+########################################################################
+
+### Assembly Source files
+ASRC    =
 
 ### Optimization level (0, 1, 2, 3, 4 or s)
 OPTIMIZE = s
@@ -19,7 +28,7 @@ CSTD = gnu89
 LIBS	=
 LIBDIRS	=
 INCDIRS	=
-DEFS	= F_CPU=8000000
+DEFS	= F_CPU=$(FPU)
 ADEFS	=
 
 ### Warning contorls

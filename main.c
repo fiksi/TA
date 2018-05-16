@@ -4,11 +4,12 @@
 
 #include <avr/io.h>	/* Device specific declarations */
 #include <util/delay.h>
-#include "ff.h"		/* Declarations of FatFs API */
 
+#include "sdmmc/ff.h"		/* Declarations of FatFs API */
+
+/* SDMMC Hardware Abstraction Layer => sdmmc.c */
 FATFS FatFs;		/* FatFs work area needed for each volume */
 FIL Fil;			/* File object needed for each open file */
-
 
 int main (void)
 {
