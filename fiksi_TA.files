@@ -1,3 +1,6 @@
+Makefile
+ta_uart.c
+ta_uart.h
 ta_led.c
 ta_led.h
 ta_mmc.c

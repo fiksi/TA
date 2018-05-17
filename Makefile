@@ -10,7 +10,8 @@ FPU = 8000000
 ### C Source files
 CSRC    =	main.c \
             ta_mmc.c ff.c sdmm.c \
-            ta_led.c
+            ta_led.c \
+            ta_uart.c
 
 ### Search directories
 VPATH   = fatfs

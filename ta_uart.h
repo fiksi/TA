@@ -1,3 +1,6 @@
+#ifndef TA_UART_H
+#define TA_UART_H
+
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
@@ -8,22 +11,11 @@
 #include <avr/eeprom.h>
 #include <avr/pgmspace.h>
 
-#include "ta_mmc.h"
 #include "ta_led.h"
-#include "ta_uart.h"
 
-int main (void){
+#define BAUDRATE 9600
+#define CHAR_LONG 16
 
-    ta_led_LEDInit();
-    ta_uart_Init();
+void ta_uart_Init(void);
 
-    ta_mmc_WriteTest();
-
-    sei(); // Enable all interrupt callback
-
-	while(1){
-        ta_led_LEDTest();
-	}
-}
-
-
+#endif // TA_UART_H
