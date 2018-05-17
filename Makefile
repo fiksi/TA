@@ -8,10 +8,10 @@ DEVICE  = atmega128
 FPU = 8000000
 
 ### C Source files
-CSRC    = main.c ff.c sdmm.c
+CSRC    = main.c ff.c sdmm.c ta_mmc.c
 
 ### Search directories
-VPATH   = sdmmc
+VPATH   = fatfs
 
 ########################################################################
 
@@ -52,7 +52,7 @@ NM      = avr-nm
 
 
 # Define all object files
-COBJ      = $(CSRC:.c=.o) 
+COBJ      = $(CSRC:.c=.o)
 AOBJ      = $(ASRC:.S=.o)
 COBJ      := $(addprefix $(OBJDIR)/,$(COBJ))
 AOBJ      := $(addprefix $(OBJDIR)/,$(AOBJ))
@@ -101,7 +101,7 @@ endif
 endif
 
 elf: $(PROJECT).elf
-lst: $(PROJECT).lst 
+lst: $(PROJECT).lst
 sym: $(PROJECT).sym
 
 

@@ -1,0 +1,10 @@
+ta_mmc.c
+ta_mmc.h
+main.c
+fatfs/diskio.h
+fatfs/ff.c
+fatfs/ff.h
+fatfs/ffconf.h
+fatfs/integer.h
+fatfs/sdmm.c
+fatfs/sdmm.h

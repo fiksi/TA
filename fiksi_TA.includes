@@ -1,0 +1,7 @@
+.
+./fatfs
+/usr/avr/include
+/usr/avr/include/avr
+/usr/avr/include/sys
+/usr/avr/include/util
+/usr/avr/include/compat
