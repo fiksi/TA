@@ -8,7 +8,9 @@ DEVICE  = atmega128
 FPU = 8000000
 
 ### C Source files
-CSRC    = main.c ff.c sdmm.c ta_mmc.c
+CSRC    =	main.c \
+            ta_mmc.c ff.c sdmm.c \
+            ta_led.c
 
 ### Search directories
 VPATH   = fatfs
