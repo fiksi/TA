@@ -5,11 +5,11 @@ PROJECT	= tes
 DEVICE  = atmega128
 
 ### Clock Frequency (Hz)
-FPU = 8000000
+#FPU = 16000000
 
 ### C Source files
 CSRC    =	main.c \
-            ta_mmc.c ff.c sdmm.c \
+			ta_mmc.c ff.c sdmm.c \
             ta_led.c \
             ta_uart.c
 
@@ -31,7 +31,7 @@ CSTD = gnu89
 LIBS	=
 LIBDIRS	=
 INCDIRS	=
-DEFS	= F_CPU=$(FPU)
+DEFS	= F_CPU=8000000
 ADEFS	=
 
 ### Warning contorls

@@ -23,6 +23,7 @@ int main (void){
 
 	while(1){
         ta_led_LEDTest();
+		//printf("test \n\r");
 	}
 }
 
