@@ -12,6 +12,9 @@
 #include <avr/pgmspace.h>
 
 #include "fatfs/ff.h"
+#include "ta_led.h"
+
+#define MMC_STR_LONG 32
 
 /* SDMMC Hardware Abstraction Layer => fatfs/sdmm.h */
 /* pinout for software based SPI
