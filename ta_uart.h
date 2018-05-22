@@ -12,6 +12,7 @@
 #include <avr/pgmspace.h>
 
 #include "ta_led.h"
+#include "ta_mmc.h"
 
 #define BAUDRATE 9600
 #define CHAR_LONG 16

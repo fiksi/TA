@@ -45,6 +45,10 @@ ISR(USART0_RX_vect){
     if(strcmp(var_str,"test")==0){
         printf("serial OK \n\r");
     }
+	else if(strcmp(var_str,"testmmc")==0){
+		ta_mmc_WriteTest();
+        printf("mmc written \n\r");
+    }
     else{
         printf("%s? \n\r",var_str);
     }

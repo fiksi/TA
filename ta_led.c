@@ -1,5 +1,7 @@
 #include "ta_led.h"
 
+uint8_t cobavar = 200;
+
 void tunda_us(unsigned int time){
     unsigned int i;
 

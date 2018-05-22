@@ -16,8 +16,7 @@ int main (void){
 
     ta_led_LEDInit();
     ta_uart_Init();
-
-    ta_mmc_WriteTest();
+//	ta_mmc_WriteTest();
 
     sei(); // Enable all interrupt callback
 
