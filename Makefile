@@ -31,7 +31,7 @@ CSTD = gnu89
 LIBS	=
 LIBDIRS	=
 INCDIRS	=
-DEFS	= F_CPU=8000000
+DEFS	= F_CPU=12000000
 ADEFS	=
 
 ### Warning contorls
