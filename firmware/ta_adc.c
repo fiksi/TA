@@ -6,10 +6,8 @@ void ta_adc_Init(void){
     ADMUX |= 1<<REFS0;
     ADMUX &=~(1<<ADLAR);
 
-    ADCSRA|=(1<<ADEN)|(1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0);
-
-    DDRA &= ~(1<<PIN_ADC);
-    PORTA &= ~(1<<PIN_ADC);
+    ADCSRA|=(1<<ADEN);
+    ADCSRA|=(1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0);
 }
 
 uint16_t ta_adc_Read(uint8_t pin){
