@@ -14,7 +14,9 @@ TA_HMI::TA_HMI(QWidget *parent) :
     QObject::connect(tmrReq,SIGNAL(timeout()),SLOT(ta_req_data()));
 
     ui->txtCommData->hide();
+    ui->btnStart->setEnabled(false);
 }
+
 
 TA_HMI::~TA_HMI()
 {
@@ -26,7 +28,7 @@ void TA_HMI::ta_req_data(){
 
     if(!my_port->isOpen()){return;}
 
-    QByteArray datareq="adc0\n";
+    QByteArray datareq="adc\n";
 
     my_port->write(datareq);
 }
@@ -58,6 +60,7 @@ void TA_HMI::on_btnOpen_clicked()
 
     if(ui->btnOpen->text()=="Open"){
         my_port->setPortName(dev_name);
+
         if(my_port->open(QIODevice::ReadWrite)){
             my_port->setBaudRate(dev_baud,QSerialPort::AllDirections);
             my_port->setDataBits(QSerialPort::Data8);
@@ -65,10 +68,12 @@ void TA_HMI::on_btnOpen_clicked()
             my_port->setFlowControl(QSerialPort::NoFlowControl);
             my_port->setParity(QSerialPort::NoParity);
             ui->btnOpen->setText("Close");
+            ui->btnStart->setEnabled(true);
         }
         else{
             QMessageBox::critical(this,"Gagal","Port gagal dibuka " + dev_name);
             ui->btnOpen->setText("Open");
+            ui->btnStart->setEnabled(false);
         }
     }
     else{
@@ -76,6 +81,7 @@ void TA_HMI::on_btnOpen_clicked()
             my_port->close();
         }
         ui->btnOpen->setText("Open");
+        ui->btnStart->setEnabled(false);
     }
 }
 

@@ -7,11 +7,11 @@
     <x>0</x>
     <y>0</y>
     <width>154</width>
-    <height>223</height>
+    <height>215</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>TA_HMI</string>
+   <string>HMI</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QComboBox" name="cmbPort">
@@ -106,7 +106,7 @@
       <x>10</x>
       <y>130</y>
       <width>131</width>
-      <height>31</height>
+      <height>21</height>
      </rect>
     </property>
    </widget>
@@ -136,7 +136,7 @@
      <x>0</x>
      <y>0</y>
      <width>154</width>
-     <height>21</height>
+     <height>19</height>
     </rect>
    </property>
   </widget>

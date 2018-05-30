@@ -1,7 +1,5 @@
 #include "ta_uart.h"
 
-/* USING ATMega128 UART-1 */
-
 char var_str[CHAR_LONG];
 extern uint16_t adc0;
 
@@ -41,8 +39,10 @@ void ta_uart_Init(void){
 
 ISR(USART0_RX_vect){
 
+    //pastikan nerima End Of Line (EOL) sebagai LF,
+    //bukan CR atau CRLF
     scanf("%s",var_str);
-//	printf("\n\r");
+
     if(strcmp(var_str,"test")==0){
         printf("serial OK \n");
     }
@@ -50,14 +50,13 @@ ISR(USART0_RX_vect){
 		ta_mmc_WriteTest();
         printf("mmc written \n");
     }
-    else if(strcmp(var_str,"adc0")==0){
+    else if(strcmp(var_str,"adc")==0){
         printf("%4i \n",adc0);
     }
-//    else{
-//        printf("%s? \n",var_str);
-//    }
+    else{
+        printf("%s? \n",var_str);
+    }
 
-    //pastikan nerima End Of Line (EOL) sebagai LF,
-    //bukan CR atau CRLF
+
     return;
 }

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QSerialPort>
 #include <QMessageBox>
+#include <QPushButton>
 #include <QTimer>
 
 namespace Ui {
@@ -20,12 +21,11 @@ public:
 
 private slots:
     void on_btnOpen_clicked();
+    void on_btnStart_clicked();
 
     void ta_req_data();
     void ta_read_data();
     void ta_parse_int(QString strInput);
-
-    void on_btnStart_clicked();
 
 private:
     Ui::TA_HMI *ui;
