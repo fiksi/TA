@@ -20,7 +20,7 @@ static int uart_getchar(FILE *stream)
 
     while ((UCSR0A & (1 << RXC0)) == 0) {};
     temp=UDR0;
-    uart_putchar(temp,stream);
+//    uart_putchar(temp,stream);
     return(temp);
 }
 
@@ -42,20 +42,20 @@ void ta_uart_Init(void){
 ISR(USART0_RX_vect){
 
     scanf("%s",var_str);
-	printf("\n\r");
+//	printf("\n\r");
     if(strcmp(var_str,"test")==0){
-        printf("serial OK \n\r");
+        printf("serial OK \n");
     }
 	else if(strcmp(var_str,"testmmc")==0){
 		ta_mmc_WriteTest();
-        printf("mmc written \n\r");
+        printf("mmc written \n");
     }
     else if(strcmp(var_str,"adc0")==0){
-        printf("%4i \n\r",adc0);
+        printf("%4i \n",adc0);
     }
-    else{
-        printf("%s? \n\r",var_str);
-    }
+//    else{
+//        printf("%s? \n",var_str);
+//    }
 
     //pastikan nerima End Of Line (EOL) sebagai LF,
     //bukan CR atau CRLF
