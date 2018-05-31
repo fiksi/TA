@@ -3,8 +3,9 @@
 /* USING ATMega128 UART-1 */
 
 char var_str[CHAR_LONG];
+extern uint16_t adc0;
 
-static int uart_putchar(char ch,FILE*stream)
+static int uart_putchar(char ch,FILE *stream)
 {
     if(ch=='\n'){uart_putchar('\r',stream);}
     while ((UCSR0A & (1 << UDRE0)) == 0) {};
@@ -12,14 +13,14 @@ static int uart_putchar(char ch,FILE*stream)
     return 0;
 }
 
-static int uart_getchar(FILE*stream)
+static int uart_getchar(FILE *stream)
 {
     (void) stream;
     char temp;
 
     while ((UCSR0A & (1 << RXC0)) == 0) {};
     temp=UDR0;
-	uart_putchar(temp,stream);
+    uart_putchar(temp,stream);
     return(temp);
 }
 
@@ -49,9 +50,14 @@ ISR(USART0_RX_vect){
 		ta_mmc_WriteTest();
         printf("mmc written \n\r");
     }
+    else if(strcmp(var_str,"adc0")==0){
+        printf("%4i \n\r",adc0);
+    }
     else{
         printf("%s? \n\r",var_str);
     }
 
+    //pastikan nerima End Of Line (EOL) sebagai LF,
+    //bukan CR atau CRLF
     return;
 }

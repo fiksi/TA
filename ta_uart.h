@@ -13,6 +13,7 @@
 
 #include "ta_led.h"
 #include "ta_mmc.h"
+#include "ta_adc.h"
 
 #define BAUDRATE 9600
 #define CHAR_LONG 16

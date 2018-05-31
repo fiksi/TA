@@ -1,5 +1,5 @@
 ### Project name (also used for output file name)
-PROJECT	= tes
+PROJECT	= test
 
 ### Target device
 DEVICE  = atmega128
@@ -8,10 +8,11 @@ DEVICE  = atmega128
 #FPU = 16000000
 
 ### C Source files
-CSRC    =	main.c \
-			ta_mmc.c ff.c sdmm.c \
+CSRC    =   main.c \
+            ta_mmc.c ff.c sdmm.c \
             ta_led.c \
-            ta_uart.c
+            ta_uart.c \
+            ta_adc.c
 
 ### Search directories
 VPATH   = fatfs

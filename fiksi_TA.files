@@ -5,6 +5,8 @@ ta_led.c
 ta_led.h
 ta_mmc.c
 ta_mmc.h
+ta_adc.h
+ta_adc.c
 main.c
 fatfs/diskio.h
 fatfs/ff.c
@@ -13,3 +15,4 @@ fatfs/ffconf.h
 fatfs/integer.h
 fatfs/sdmm.c
 fatfs/sdmm.h
+
